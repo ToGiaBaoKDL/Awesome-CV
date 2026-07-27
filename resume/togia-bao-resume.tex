@@ -6,7 +6,11 @@
 \geometry{left=1.35cm, top=.75cm, right=1.35cm, bottom=1.25cm, footskip=.45cm}
 
 \definecolor{awesome}{HTML}{00796B}
-\setbool{acvSectionColorHighlight}{true}
+\setbool{acvSectionColorHighlight}{false}
+\renewcommand*{\bodyfontlight}{\sffamily}
+\renewcommand*{\headerfirstnamestyle}[1]{{\fontsize{30pt}{1em}\headerfont\bfseries\color{text} #1}}
+\renewcommand*{\headerlastnamestyle}[1]{{\fontsize{30pt}{1em}\headerfont\bfseries\color{text} #1}}
+\renewcommand*{\sectionstyle}[1]{{\color{awesome}\sectionstyleface{#1}}}
 \renewcommand{\acvHeaderSocialSep}{\quad\textbar\quad}
 \renewcommand{\acvSectionTopSkip}{2mm}
 \renewcommand{\acvSectionContentTopSkip}{1.7mm}
@@ -22,7 +26,7 @@
 \position{Data Engineer}
 \address{Thu Duc, Ho Chi Minh City, Vietnam}
 
-\mobile{(+84) 96 196 4353}
+\mobile{+84 96 196 4353}
 \email{baokdl2226@gmail.com}
 \github{ToGiaBaoKDL}
 \linkedin{togiabao}
