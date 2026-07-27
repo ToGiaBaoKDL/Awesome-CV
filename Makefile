@@ -28,7 +28,7 @@ resume: compile
 
 togia-bao-resume: compile
 
-$(RESUME_OUTPUT): $(RESUME_MAIN) $(RESUME_SRCS) awesome-cv.cls
+$(RESUME_OUTPUT): $(RESUME_MAIN) $(RESUME_SRCS) $(RESUME_ROOT)/awesome-cv.cls
 	$(LATEX) -interaction=nonstopmode -halt-on-error -file-line-error \
 		-output-directory=$(RESUME_ROOT) $(RESUME_MAIN)
 
