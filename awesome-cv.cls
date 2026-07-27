@@ -78,9 +78,11 @@
 % Needed to use icons from font-awesome
 \RequirePackage{fontawesome6}
 \RequirePackage{accsupp}
-\defaultfontfeatures{
-  Renderer=HarfBuzz,
-}
+\ifxetex
+  \defaultfontfeatures{Renderer=OpenType}
+\else
+  \defaultfontfeatures{Renderer=HarfBuzz}
+\fi
 \setmainfont{Source Sans 3}[
   UprightFont=*,
   ItalicFont=* Italic,
@@ -531,8 +533,8 @@
   }%
   \begin{minipage}[c]{\headerphotowidth}%
     \ifthenelse{\equal{\@photoalign}{left}}{\raggedright\drawphoto}{}
-  \end{minipage}
-  \begin{minipage}[c]{\headertextwidth}
+  \end{minipage}%
+  \begin{minipage}[c]{\headertextwidth}%
     \ifthenelse{\equal{#1}{L}}{\raggedright}{\ifthenelse{\equal{#1}{R}}{\raggedleft}{\centering}}
     \headerfirstnamestyle{\@firstname}\headerlastnamestyle{{}\acvHeaderNameDelim\@lastname}%
     \\[\acvHeaderAfterNameSkip]%

@@ -1,0 +1,48 @@
+%!TEX TS-program = lualatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[10pt, a4paper]{awesome-cv}
+
+\geometry{left=1.35cm, top=.75cm, right=1.35cm, bottom=1.25cm, footskip=.45cm}
+
+\definecolor{awesome}{HTML}{00796B}
+\setbool{acvSectionColorHighlight}{true}
+\renewcommand{\acvHeaderSocialSep}{\quad\textbar\quad}
+\renewcommand{\acvSectionTopSkip}{2mm}
+\renewcommand{\acvSectionContentTopSkip}{1.7mm}
+
+\hypersetup{
+  pdftitle={Tô Gia Bảo — Data Engineer Résumé},
+  pdfauthor={Tô Gia Bảo},
+  pdfsubject={Data Engineer Résumé},
+  pdfkeywords={Data Engineer, Python, SQL, Airflow, dbt, AWS, Data Lakehouse}
+}
+
+\name{Tô}{Gia Bảo}
+\position{Data Engineer}
+\address{Thu Duc, Ho Chi Minh City, Vietnam}
+
+\mobile{(+84) 96 196 4353}
+\email{baokdl2226@gmail.com}
+\github{ToGiaBaoKDL}
+\linkedin{togiabao}
+
+\begin{document}
+
+\makecvheader[C]
+
+\makecvfooter
+  {}
+  {Tô Gia Bảo~~~·~~~Résumé}
+  {\thepage}
+
+\input{togia-bao-resume/summary.tex}
+\input{togia-bao-resume/experience.tex}
+\input{togia-bao-resume/projects.tex}
+\input{togia-bao-resume/skills.tex}
+\input{togia-bao-resume/education.tex}
+\input{togia-bao-resume/recognition.tex}
+\input{togia-bao-resume/publication.tex}
+\input{togia-bao-resume/languages.tex}
+
+\end{document}
