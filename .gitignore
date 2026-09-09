@@ -1,3 +1,6 @@
+### Local tools ###
+.tools/
+
 ### TeX ###
 ## Core latex/pdflatex auxiliary files:
 *.aux
@@ -20,4 +23,3 @@
 ### Mac OS X ###
 ## Mac OS X metadata files:
 *.DS_Store
-
