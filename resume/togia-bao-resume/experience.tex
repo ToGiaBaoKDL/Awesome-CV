@@ -8,12 +8,13 @@
     {Mar. 2025 -- Present}
     {
       \begin{cvitems}
-        \item {Implemented MariaDB sync workflows with Amazon EMR and AWS Glue, applying PII masking between landing and curated layers and dbt transformations for analytics-ready data.}
-        \item {Used dbt tests, Great Expectations, and pytest for automated data validation and regression testing, including query contracts, SQL compilation, and dbt/Lightdash metadata integration checks.}
-        \item {Optimized one S3 table with Parquet ZSTD-3 compression and file compaction, saving 38.4 TB (45\%) and reducing object count by 80\% across 56.8 billion rows (2023 to Sep. 2026). Audited 1,360 partitions using migration-recorded row counts and fingerprints, reconciled with Glue and S3 metadata.}
+        \item {Implemented MariaDB ingestion workflows with Amazon EMR and AWS Glue, applying PII masking in the curated layer and dbt transformations to deliver analytics-ready datasets.}
+        \item {Optimized storage for one S3 table through Parquet ZSTD-3 compression and file compaction, saving 38.4 TB (45\%) and reducing object count by 80\% across 56.8 billion rows (2023 to Sep. 2026).}
+        \item {Developed dbt fact and dimension models with defined grains, keys, and relationships, powering Lightdash dashboards for Airflow reliability, SLA tracking, Athena usage, and S3 storage health.}
+        \item {Used dbt tests, Great Expectations, and pytest to validate data transformations and integrations, including regression checks for query contracts, SQL compilation, and dbt/Lightdash metadata consistency.}
         \item {Developed a FastMCP server powering conversational analytics in Slack, grounded in dbt docs, Lightdash dashboards, and semantic-layer metadata for self-service data discovery.}
         \item {Automated MongoDB backup validation and general ledger lookups with Python and Airflow, reducing manual checks.}
-        \item {Monitored Airflow, Athena, and S3 health through dbt and Lightdash dashboards; migrated Timo Metrics from Loki/Grafana to SigNoz to centralize logs and metrics for SLA tracking and troubleshooting.}
+        \item {Migrated Timo Metrics from Loki/Grafana to SigNoz, centralizing logs and metrics to support operational monitoring and troubleshooting.}
         \item {Delivered Tracking247 to sync Customer-provided shipment IDs and status updates into MongoDB via Airflow and Streamlit.}
       \end{cvitems}
     }
