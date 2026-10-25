@@ -1,4 +1,4 @@
-.PHONY: all compile local-compile resume togia-bao-resume tinytex-install clean
+.PHONY: all compile compile-aml aml local-compile resume togia-bao-resume tinytex-install clean
 
 TINY_TEX_VERSION := 2026.09
 TINY_TEX_PARENT := $(CURDIR)/.tools
@@ -15,12 +15,20 @@ RESUME_DIR := $(RESUME_ROOT)/togia-bao-resume
 RESUME_MAIN := $(RESUME_ROOT)/togia-bao-resume.tex
 RESUME_OUTPUT := $(RESUME_ROOT)/togia-bao-resume.pdf
 RESUME_SRCS := $(shell find $(RESUME_DIR) -name '*.tex')
+AML_DIR := $(RESUME_ROOT)/togia-bao-aml-analyst
+AML_MAIN := $(RESUME_ROOT)/togia-bao-aml-analyst.tex
+AML_OUTPUT := $(RESUME_ROOT)/togia-bao-aml-analyst.pdf
+AML_SRCS := $(wildcard $(AML_DIR)/*.tex)
 
 .DEFAULT_GOAL := compile
 
 all: compile
 
 compile: $(RESUME_OUTPUT)
+
+compile-aml: $(AML_OUTPUT)
+
+aml: compile-aml
 
 local-compile: $(RESUME_OUTPUT)
 
@@ -43,6 +51,10 @@ $(RESUME_OUTPUT): $(TINY_TEX_STAMP) $(RESUME_MAIN) $(RESUME_SRCS) $(RESUME_ROOT)
 	$(LATEX) -interaction=nonstopmode -halt-on-error -file-line-error \
 		-output-directory=$(RESUME_ROOT) $(RESUME_MAIN)
 
+$(AML_OUTPUT): $(TINY_TEX_STAMP) $(AML_MAIN) $(AML_SRCS) $(RESUME_ROOT)/awesome-cv.cls
+	$(LATEX) -interaction=nonstopmode -halt-on-error -file-line-error \
+		-output-directory=$(RESUME_ROOT) $(AML_MAIN)
+
 clean:
 	rm -f \
 		$(RESUME_ROOT)/togia-bao-resume.aux \
@@ -51,4 +63,11 @@ clean:
 		$(RESUME_ROOT)/togia-bao-resume.log \
 		$(RESUME_ROOT)/togia-bao-resume.out \
 		$(RESUME_ROOT)/togia-bao-resume.run.xml \
-		$(RESUME_ROOT)/togia-bao-resume.toc
+		$(RESUME_ROOT)/togia-bao-resume.toc \
+		$(RESUME_ROOT)/togia-bao-aml-analyst.aux \
+		$(RESUME_ROOT)/togia-bao-aml-analyst.fdb_latexmk \
+		$(RESUME_ROOT)/togia-bao-aml-analyst.fls \
+		$(RESUME_ROOT)/togia-bao-aml-analyst.log \
+		$(RESUME_ROOT)/togia-bao-aml-analyst.out \
+		$(RESUME_ROOT)/togia-bao-aml-analyst.run.xml \
+		$(RESUME_ROOT)/togia-bao-aml-analyst.toc

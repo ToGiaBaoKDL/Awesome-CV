@@ -1,0 +1,20 @@
+\cvsection{Experience}
+
+\begin{cventries}
+  \cventry
+    {Data Engineer}
+    {\href{https://timo.vn}{Timo Digital Bank by BVBank}}
+    {Ho Chi Minh City, Vietnam}
+    {Mar. 2025 -- Present}
+    {
+      \begin{cvitems}
+        \item {Engineered a daily incremental AML and fraud feature mart on AWS Athena and dbt, tracking 40+ behavioral features across millions of transactions to identify fund pass-through, structuring, and unusual transaction arrival patterns.}
+        \item {Developed a 10-signal risk scoring engine to identify potential mule accounts through transaction velocity, nighttime bursts, small incoming transfers, and concentrated cash-outs; added balance retention gates and two-tier review queues to reduce false-positive triage workload for Compliance and Fraud Operations by approximately 50\% while retaining confirmed mule cases for review.}
+        \item {Built daily alerts comparing intraday and month-to-date transaction frequency and gross transaction value against a three-month historical baseline, flagging sudden behavioral spikes for further review.}
+        \item {Implemented MariaDB ingestion workflows with Amazon EMR and AWS Glue, applying PII masking in the curated layer and dbt transformations to deliver analytics-ready datasets.}
+        \item {Delivered Tracking247: a Streamlit app accepting shipment IDs from the Customer team, with Airflow syncing shipment status into MongoDB.}
+        \item {Migrated Timo Metrics from Loki/Grafana to SigNoz, centralizing logs and metrics for operational monitoring and troubleshooting.}
+        \item {Developed a FastMCP server for conversational analytics in Slack, using dbt docs, Lightdash dashboards, and semantic metadata to support self-service data discovery.}
+      \end{cvitems}
+    }
+\end{cventries}
