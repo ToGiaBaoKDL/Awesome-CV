@@ -8,13 +8,16 @@
     {Mar. 2025 -- Present}
     {
       \begin{cvitems}
-        \item {Implemented MariaDB ingestion workflows with Amazon EMR and AWS Glue, applying PII masking in the curated layer and dbt transformations to deliver analytics-ready datasets.}
-        \item {Optimized storage for one S3 table through Parquet ZSTD-3 compression and file compaction, saving 38.4 TB (45\%) and reducing object count by 80\% across 56.8 billion rows (2023 to Sep. 2026).}
-        \item {Developed dbt fact and dimension models with defined grains, keys, and relationships, powering Lightdash dashboards for Airflow reliability, SLA tracking, Athena usage, and S3 storage health.}
-        \item {Used dbt tests, Great Expectations, and pytest to validate data transformations and integrations, including regression checks for query contracts, SQL compilation, and dbt/Lightdash metadata consistency.}
-        \item {Developed a FastMCP server powering conversational analytics in Slack, grounded in dbt docs, Lightdash dashboards, and semantic-layer metadata for self-service data discovery.}
+        \item {Built MariaDB ingestion with EMR, AWS Glue, PII masking, and dbt to deliver analytics-ready datasets.}
+        \item {Optimized an S3 table with Parquet ZSTD-3 and compaction, saving 38.4 TB (45\%) and cutting object count by 80\% across 56.8 billion rows (2023 to Sep. 2026).}
+        \item {Built a daily incremental AML and fraud feature mart on Athena and dbt, tracking 40+ behavioral features across millions of transactions to detect fund pass-through, structuring, and unusual arrival patterns.}
+        \item {Developed a 10-signal mule-account scoring engine covering transaction velocity, nighttime bursts, small incoming transfers, and concentrated cash-outs. Added balance retention gates and two-tier review queues, cutting false-positive triage workload for Compliance and Fraud Operations by approximately 50\% while retaining confirmed mule cases for review.}
+        \item {Built daily alerts comparing intraday and month-to-date transaction frequency and gross value against a three-month baseline to flag behavioral spikes.}
+        \item {Modeled dbt facts and dimensions with defined grains, keys, and relationships for Lightdash dashboards covering Airflow reliability, SLAs, Athena usage, and S3 storage.}
+        \item {Validated transformations and integrations with dbt tests, Great Expectations, and pytest, checking query contracts, SQL compilation, and dbt/Lightdash metadata consistency.}
+        \item {Built a FastMCP server for self-service Slack analytics using dbt docs, Lightdash, and semantic metadata.}
         \item {Automated MongoDB backup validation and general ledger lookups with Python and Airflow, reducing manual checks.}
-        \item {Migrated Timo Metrics from Loki/Grafana to SigNoz, centralizing logs and metrics to support operational monitoring and troubleshooting.}
+        \item {Migrated Timo Metrics from Loki/Grafana to SigNoz for centralized logs, metrics, and troubleshooting.}
         \item {Delivered Tracking247 to sync Customer-provided shipment IDs and status updates into MongoDB via Airflow and Streamlit.}
       \end{cvitems}
     }
