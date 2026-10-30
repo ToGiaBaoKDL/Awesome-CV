@@ -1,0 +1,120 @@
+%!TEX TS-program = lualatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[10pt, a4paper]{awesome-cv}
+
+\geometry{left=1.6cm, top=1.2cm, right=1.6cm, bottom=1.5cm, footskip=.7cm}
+
+\definecolor{awesome}{HTML}{00796B}
+\setbool{acvSectionColorHighlight}{false}
+\renewcommand*{\bodyfontlight}{\sffamily}
+\renewcommand*{\headerfirstnamestyle}[1]{{\fontsize{26pt}{1em}\headerfont\bfseries\color{text} #1}}
+\renewcommand*{\headerlastnamestyle}[1]{{\fontsize{26pt}{1em}\headerfont\bfseries\color{text} #1}}
+\renewcommand*{\sectionstyle}[1]{{\color{awesome}\sectionstyleface{#1}}}
+\renewcommand{\acvHeaderSocialSep}{\quad\textbar\quad}
+\renewcommand{\acvSectionTopSkip}{2mm}
+\renewcommand{\acvSectionContentTopSkip}{0.5mm}
+
+\hypersetup{
+  pdftitle={Tô Gia Bảo - Detailed Work Experience},
+  pdfauthor={Tô Gia Bảo},
+  pdfsubject={Detailed Work Experience},
+  pdfkeywords={Data Engineer, Python, SQL, Airflow, dbt, AWS, Data Lakehouse, AML, Transaction Monitoring, Risk Scoring}
+}
+
+\name{Tô}{Gia Bảo}
+\position{Data Engineer | AML Analyst}
+\address{Thu Duc, Ho Chi Minh City, Vietnam}
+
+\mobile{+84 96 196 4353}
+\email{baokdl2226@gmail.com}
+\homepage{https://tgblab.io.vn}
+\github{ToGiaBaoKDL}
+\linkedin{togiabao}
+
+
+\newcommand{\worksection}[1]{\par\addvspace{2mm}{\color{awesome}\bfseries\fontsize{14}{17}\selectfont #1}\par\nobreak\vspace{1mm}}
+\newcommand{\worksubsection}[1]{\par\addvspace{1.5mm}{\bfseries\fontsize{11}{14}\selectfont #1}\par\nobreak\vspace{.5mm}}
+\setlist[itemize]{leftmargin=4mm,topsep=1mm,itemsep=.3mm,parsep=0pt}
+\setlist[enumerate]{leftmargin=5mm,topsep=1mm,itemsep=.3mm,parsep=0pt}
+\begin{document}
+\makecvheader[C]
+\makecvfooter{}{Tô Gia Bảo · Detailed Work Experience}{\thepage}
+\fontsize{10.5}{13.5}\selectfont\color{text}\raggedright
+\setlength{\parskip}{1mm}
+\clubpenalty=10000
+\widowpenalty=10000
+\begin{center}
+{\color{awesome}\bfseries\fontsize{16}{20}\selectfont DETAILED WORK EXPERIENCE}\\[1mm]
+{Data Engineering \enspace | \enspace AML \& Fraud Analytics}
+\end{center}
+\textbf{Timo Digital Bank by BVBank} \hfill Ho Chi Minh City, Vietnam\\
+Data Engineer \hfill Mar. 2025 -- Present
+
+\worksection{Role Overview}
+Build data pipelines, analytical models, and operational reporting for digital banking. Responsibilities span ingestion, PII masking, data quality, and storage optimization, alongside transaction monitoring and risk analytics to support Compliance and Fraud Operations.
+
+\worksection{01 · Data Engineering}
+\worksubsection{MariaDB Data Pipelines}
+Implemented a workflow from MariaDB ingestion to curated datasets and downstream analytical transformations.
+\begin{itemize}
+\item Built ingestion workflows using Amazon EMR and AWS Glue to bring source data into the processing pipeline.
+\item Applied PII masking in the curated layer to protect personally identifiable information before downstream use.
+\item Developed dbt transformations to turn processed data into analytics-ready datasets for reporting and analysis.
+\end{itemize}
+\textbf{Deliverable:} An integrated ingestion, masking, and transformation workflow supporting data consumption.
+
+\worksubsection{S3 Storage Optimization}
+Optimized a large S3 table using Parquet ZSTD-3 compression and file compaction to reduce storage volume and object count.
+\begin{itemize}
+\item Applied compression and consolidated files across 56.8 billion rows covering 2023 to September 2026.
+\item Reduced storage by \textbf{38.4 TB (45\%)} and object count by \textbf{80\%} for the optimized table.
+\end{itemize}
+
+\worksubsection{Data Modeling and Operational Reporting}
+\begin{itemize}
+\item Built dbt fact and dimension models with defined grains, keys, and relationships.
+\item Powered Lightdash dashboards for Airflow reliability, SLA tracking, Athena usage, and S3 storage health.
+\end{itemize}
+\textbf{Deliverable:} Analytical models and dashboards for monitoring data platform operations.
+
+\worksubsection{Data Quality and Integration Testing}
+\begin{itemize}
+\item Used dbt tests, Great Expectations, and pytest to validate data transformations and integrations.
+\item Implemented regression checks for query contracts, SQL compilation, and dbt/Lightdash metadata consistency.
+\end{itemize}
+
+\worksection{02 · AML and Fraud Analytics}
+\worksubsection{Behavioral Feature Mart}
+Built a daily incremental feature mart on Amazon Athena and dbt to support transaction monitoring and account risk assessment.
+\begin{itemize}
+\item Developed \textbf{40+ behavioral features} across millions of transactions.
+\item Captured indicators of fund pass-through, structuring, and unusual transaction arrival patterns for downstream risk analysis.
+\end{itemize}
+
+\worksubsection{Mule Account Risk Scoring}
+Developed a \textbf{10-signal risk scoring engine} to identify potential mule accounts and prioritize review.
+\begin{itemize}
+\item Combined indicators of transaction velocity, nighttime bursts, small incoming transfers, and concentrated cash-outs.
+\item Added balance retention gates and two-tier review queues to improve alert prioritization.
+\item Reduced false-positive triage workload for Compliance and Fraud Operations by \textbf{approximately 50\%}, while retaining confirmed mule cases for review.
+\end{itemize}
+
+\worksubsection{Transaction Anomaly Alerts}
+\begin{itemize}
+\item Compared intraday and month-to-date transaction frequency and gross transaction value against a three-month historical baseline.
+\item Built daily alerts to flag sudden behavioral spikes for further review.
+\end{itemize}
+\textbf{Deliverables:} Behavioral features, risk scores, prioritized review queues, and daily alerts supporting Compliance and Fraud Operations.
+
+\worksection{03 · Analytics Tools and Operational Automation}
+\worksubsection{Self-Service Analytics in Slack}
+Built a FastMCP server for conversational analytics in Slack, using dbt documentation, Lightdash dashboards, and semantic metadata to support self-service data discovery.
+
+\worksubsection{Workflow Automation and Observability}
+\begin{itemize}
+\item Automated MongoDB backup validation and general ledger lookups with Python and Airflow, reducing manual checks.
+\item Migrated Timo Metrics from Loki/Grafana to SigNoz, centralizing logs and metrics for operational monitoring and troubleshooting.
+\item Delivered Tracking247 using Streamlit and Airflow to accept shipment IDs from the Customer team and synchronize shipment status into MongoDB.
+\end{itemize}
+\end{document}

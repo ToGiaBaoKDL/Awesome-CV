@@ -1,4 +1,4 @@
-.PHONY: all compile local-compile resume togia-bao-resume tinytex-install clean
+.PHONY: all compile compile-work-description local-compile resume togia-bao-resume tinytex-install clean
 
 TINY_TEX_VERSION := 2026.09
 TINY_TEX_PARENT := $(CURDIR)/.tools
@@ -21,6 +21,12 @@ RESUME_SRCS := $(shell find $(RESUME_DIR) -name '*.tex')
 all: compile
 
 compile: $(RESUME_OUTPUT)
+
+compile-work-description: $(RESUME_ROOT)/togia-bao-work-description.pdf
+
+$(RESUME_ROOT)/togia-bao-work-description.pdf: $(TINY_TEX_STAMP) $(RESUME_ROOT)/togia-bao-work-description.tex $(RESUME_ROOT)/awesome-cv.cls
+	$(LATEX) -interaction=nonstopmode -halt-on-error -file-line-error \
+		-output-directory=$(RESUME_ROOT) $(RESUME_ROOT)/togia-bao-work-description.tex
 
 local-compile: $(RESUME_OUTPUT)
 
